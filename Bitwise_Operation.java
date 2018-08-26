@@ -2,7 +2,7 @@ package baekjoon_BruteForceSearch0;
 
 public class Bitwise_Operation {
 	// 비트 연산에는 shift left(<<)와 shift right(>>)가 있다.
-	// A>>B(A를 오른쪽으로 B비트만틈 민다.)
+	// A>>B(A를 오른쪽으로 B비트만큼 민다.)
 
 	public static void main(String[] args) {
 		System.out.println(1 >> 0);

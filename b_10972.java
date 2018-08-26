@@ -1,4 +1,4 @@
-package baekjoon_BruteForceSearch0;
+Package baekjoon_BruteForceSearch0;
 
 import java.util.Scanner;
 
