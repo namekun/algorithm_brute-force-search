@@ -2,8 +2,8 @@ package baekjoon_BruteForceSearch0;
 
 import java.util.Scanner;
 
-public class b_10972 {
-	public static boolean next_permutation(int[] a) {
+public class b_10974 {
+	public static boolean all_permutation(int[] a) {
 
 		int n = a.length;
 		int i = n - 1;
@@ -18,7 +18,7 @@ public class b_10972 {
 		}
 
 		int j = n - 1;
-		
+
 		while (a[j] <= a[i - 1]) {
 			j -= 1;
 		}
@@ -38,22 +38,28 @@ public class b_10972 {
 		return true;
 	}
 
+	// 메모리를 너무 많이 잡아먹는다.
+	// public static int Factorial(int a) {
+	// if(a <= 1) {
+	// return a;
+	// } else
+	// return Factorial(a-1) * a;
+	// }
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int a = sc.nextInt();
 		int[] x = new int[a];
-
-		for (int i = 0; i < a; i++) {
-			x[i] = sc.nextInt();
+		for (int i = 0; i < x.length; i++) {
+			x[i] = i + 1;
 		}
-		
-	     if (next_permutation(x)) {
-	            for (int i=0; i< a; i++) {
-	                System.out.print(x[i] + " ");
-	            }
-	            System.out.println();
-	        } else {
-	            System.out.println("-1");
-	        }
+
+		do {
+			for (int i = 0; i < a; i++) {
+				System.out.print(x[i] + " ");
+			}
+			System.out.println();
+		} while (all_permutation(x));
+
 	}
 }

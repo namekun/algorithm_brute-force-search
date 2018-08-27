@@ -2,13 +2,13 @@ package baekjoon_BruteForceSearch0;
 
 import java.util.Scanner;
 
-public class b_10972 {
-	public static boolean next_permutation(int[] a) {
-
+public class b_10973 {
+	public static boolean prev_permutation(int[] a) {
+		
+		
 		int n = a.length;
 		int i = n - 1;
-		// a[i-1] < a[i]인 i를 찾는다.
-		while (i > 0 && a[i - 1] >= a[i]) {
+		while (i > 0 && a[i - 1] <= a[i]) {
 			i -= 1;
 		}
 
@@ -17,12 +17,13 @@ public class b_10972 {
 			return false;
 		}
 
+		// a[j] > a[i-1]을 만족하는 가장 큰 j 를 찾는다. 뒤에서부터
 		int j = n - 1;
-		
-		while (a[j] <= a[i - 1]) {
+		while (a[j] >= a[i - 1]) {
 			j -= 1;
 		}
-
+		
+		// a[i-1]과 a[j]를 바꾼다.
 		int temp = a[i - 1];
 		a[i - 1] = a[j];
 		a[j] = temp;
@@ -47,7 +48,7 @@ public class b_10972 {
 			x[i] = sc.nextInt();
 		}
 		
-	     if (next_permutation(x)) {
+	     if (prev_permutation(x)) {
 	            for (int i=0; i< a; i++) {
 	                System.out.print(x[i] + " ");
 	            }
